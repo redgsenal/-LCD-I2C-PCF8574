@@ -22,5 +22,10 @@
   "bugs": {
     "url": "https://github.com/redgsenal/LCD-I2C-PCF8574/issues"
   },
-  "homepage": "https://github.com/redgsenal/LCD-I2C-PCF8574#readme"
+  "homepage": "https://github.com/redgsenal/LCD-I2C-PCF8574#readme",
+  "dependencies": {
+    "johnny-five": "^2.1.0",
+    "nodemon": "^2.0.15",
+    "raspi-io": "^11.0.0"
+  }
 }
