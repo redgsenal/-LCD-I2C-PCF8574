@@ -1,4 +1,5 @@
 const five = require("johnny-five");
+const moment = require('moment')
 const Raspi = require("raspi-io").RaspiIO;
 const board = new five.Board({
   //repl: false,
@@ -9,17 +10,21 @@ const board = new five.Board({
 /**
 * Connect peripherals and initialize
 */
-board.on("ready", function() {
-  var random = Math.random().toString(36).replace(/[^a-z]+/g, "").substr(0, 4).toUpperCase();
+board.on("ready", function() {  
   const lcd = new five.LCD({
     controller: "PCF8574A"
   });
-  lcd.useChar("heart");
-  lcd.cursor(0, 0).print("hello :heart:");
-  lcd.blink();
-  lcd.cursor(1, 0).print("Blinking? ");
-  lcd.cursor(0, 10).print(random);
-  setTimeout(function() {
-    process.exit(0);
-  }, 3000);
+
+  function displaytime () {
+    lcd.cursor(1, 0).print(moment().format('YYYY-MM-DD dddd'));
+    lcd.cursor(2, 0).print(moment().format('hh:mm:ss a'));
+  }
+
+  lcd.home().clear();  
+  this.wait(1000, function(){    
+    lcd.cursor(0, 0).print("--- Date & Time ----");
+    lcd.cursor(3, 0).print("--------------------");
+    setInterval(displaytime, 1000);
+  });
+  
 });
