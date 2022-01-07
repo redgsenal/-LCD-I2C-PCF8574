@@ -4,7 +4,7 @@
   "description": "LCD display using johnnyfive on raspberry pi",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo \"Error: no test specified here\" && exit 1",
     "startapp": "sudo nodemon app.js && exit 1"
   },
   "repository": {
