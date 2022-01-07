@@ -1,0 +1,26 @@
+{
+  "name": "lcd-pcf8574",
+  "version": "1.0.0",
+  "description": "LCD display using johnnyfive on raspberry pi",
+  "main": "app.js",
+  "scripts": {
+    "test": "testapp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/redgsenal/LCD-I2C-PCF8574.git"
+  },
+  "keywords": [
+    "LCD",
+    "Raspberry",
+    "Pi",
+    "johnnyfive",
+    "pcf8574"
+  ],
+  "author": "reggie.senal@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/redgsenal/LCD-I2C-PCF8574/issues"
+  },
+  "homepage": "https://github.com/redgsenal/LCD-I2C-PCF8574#readme"
+}
