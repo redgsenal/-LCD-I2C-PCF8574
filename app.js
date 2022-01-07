@@ -12,12 +12,13 @@ const board = new five.Board({
 */
 board.on("ready", function() {  
   const lcd = new five.LCD({
-    controller: "PCF8574A"
+    controller: "PCF8574AT"
   });
 
   function displaytime () {
     lcd.cursor(1, 0).print(moment().format('YYYY-MM-DD dddd'));
     lcd.cursor(2, 0).print(moment().format('hh:mm:ss a'));
+    lcd.noAutoscroll().noBlink().cursor(-1, -1);
   }
 
   lcd.home().clear();  
@@ -25,6 +26,5 @@ board.on("ready", function() {
     lcd.cursor(0, 0).print("--- Date & Time ----");
     lcd.cursor(3, 0).print("--------------------");
     setInterval(displaytime, 1000);
-  });
-  
+  });  
 });
